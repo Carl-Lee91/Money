@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:money/authentificatiom/sign_up_screen.dart';
+import 'package:money/constant/size.dart';
+import 'package:money/welcome_screen.dart';
 
 class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
@@ -12,6 +13,9 @@ class StartScreen extends StatefulWidget {
 class _StartScreenState extends State<StartScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
+
+  final Color mainColor = Colors.amber.shade700;
+  final Color whiteColor = Colors.white;
 
   @override
   void initState() {
@@ -34,7 +38,8 @@ class _StartScreenState extends State<StartScreen>
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) => SignUpScreen(),
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            WelcomeScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(
             opacity: animation,
@@ -56,32 +61,32 @@ class _StartScreenState extends State<StartScreen>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.yellow.shade700,
-        body: const Column(
+        backgroundColor: mainColor,
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FaIcon(
               FontAwesomeIcons.crown,
-              color: Colors.white,
-              size: 120,
+              color: whiteColor,
+              size: Sizes.size60 + Sizes.size60,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   Icons.attach_money_rounded,
-                  color: Colors.white,
-                  size: 60,
+                  color: whiteColor,
+                  size: Sizes.size60,
                 ),
                 Icon(
                   Icons.attach_money_rounded,
-                  color: Colors.white,
-                  size: 60,
+                  color: whiteColor,
+                  size: Sizes.size60,
                 ),
                 Icon(
                   Icons.attach_money_rounded,
-                  color: Colors.white,
-                  size: 60,
+                  color: whiteColor,
+                  size: Sizes.size60,
                 ),
               ],
             ),
