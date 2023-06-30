@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:money/constant/color.dart';
+import 'package:money/constant/gap.dart';
 import 'package:money/constant/size.dart';
-import 'package:money/fortune_cookie_screen.dart';
+import 'package:money/screen/fortune_cookie_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  WelcomeScreen({super.key});
-  final Color mainColor = Colors.amber.shade700;
+  const WelcomeScreen({super.key});
 
   void _onTabNext(BuildContext context) {
     Navigator.pushReplacement(
@@ -31,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     FaIcon(
                       FontAwesomeIcons.crown,
-                      color: mainColor,
+                      color: ColorTheme.mainColor,
                       size: Sizes.size60 + Sizes.size60,
                     ),
                     Row(
@@ -39,17 +40,17 @@ class WelcomeScreen extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.attach_money_rounded,
-                          color: mainColor,
+                          color: ColorTheme.mainColor,
                           size: Sizes.size60,
                         ),
                         Icon(
                           Icons.attach_money_rounded,
-                          color: mainColor,
+                          color: ColorTheme.mainColor,
                           size: Sizes.size60,
                         ),
                         Icon(
                           Icons.attach_money_rounded,
-                          color: mainColor,
+                          color: ColorTheme.mainColor,
                           size: Sizes.size60,
                         ),
                       ],
@@ -57,9 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: Sizes.size10,
-              ),
+              Gaps.v20,
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -75,11 +74,9 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: Sizes.size32,
-              ),
+              Gaps.v40,
               CupertinoButton(
-                color: mainColor,
+                color: ColorTheme.mainColor,
                 onPressed: () => _onTabNext(context),
                 child: const Text(
                   "시작하기",
