@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money/screen/fortune_cookie_screen.dart';
+import 'package:money/screen/lotto_screen.dart';
 
 void main() {
   runApp(const MoneyApp());
@@ -11,7 +11,8 @@ class MoneyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: FortuneCookieScreen(),
+      themeMode: ThemeMode.system,
+      home: LottoScreen(),
     );
   }
 }
