@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money/screen/lotto_screen.dart';
+import 'package:money/screen/start_screen.dart';
 
 void main() {
   runApp(const MoneyApp());
@@ -12,7 +12,7 @@ class MoneyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       themeMode: ThemeMode.system,
-      home: LottoScreen(),
+      home: StartScreen(),
     );
   }
 }
