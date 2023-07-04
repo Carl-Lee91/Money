@@ -49,20 +49,6 @@ class MainAppbar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      leading: Image.asset(
-        "assets/images/fortunecookie.png",
-        width: 20,
-        height: 20,
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const FaIcon(
-            FontAwesomeIcons.gear,
-            color: Colors.black,
-          ),
-        ),
-      ],
     );
   }
 }

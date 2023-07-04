@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:money/constant/color.dart';
 import 'package:money/screen/fortune_cookie_screen.dart';
+import 'package:money/screen/setting_screen.dart';
 
 class SubAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
   const SubAppbar({super.key, required this.title});
+
+  void _onTabSettingScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => const SettingScreen(),
+    ));
+  }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -39,7 +46,7 @@ class SubAppbar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () => _onTabSettingScreen(context),
           icon: const FaIcon(
             FontAwesomeIcons.gear,
             color: Colors.white,

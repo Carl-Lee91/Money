@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:money/models/coin_model.dart';
 import 'package:money/models/lotto_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,5 +19,15 @@ class ApiServices {
       return LottoModel.fromJson(lottoNumbers);
     }
     throw Exception('API 요청 실패: ${response.statusCode}');
+  }
+
+  static Future<CoinModel> fetchCoinPrice(String coinName) async {
+    final url = Uri.parse("https://api.bithumb.com/public/ticker/$coinName");
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      final coinPrice = jsonDecode(response.body);
+      return CoinModel.fromJson(coinPrice);
+    }
+    throw Exception("API 요청 실패: ${response.statusCode}");
   }
 }
