@@ -9,6 +9,7 @@ import 'package:money/constant/color.dart';
 import 'package:money/constant/gap.dart';
 import 'package:money/constant/size.dart';
 import 'package:money/models/lotto_model.dart';
+import 'package:money/widget/lotto_number.dart';
 
 class LottoScreen extends StatefulWidget {
   const LottoScreen({super.key});
@@ -100,164 +101,24 @@ class _LottoScreenState extends State<LottoScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$drwtNo1",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$drwtNo1"),
                           Gaps.h10,
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$drwtNo2",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$drwtNo2"),
                           Gaps.h10,
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$drwtNo3",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$drwtNo3"),
                           Gaps.h10,
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$drwtNo4",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$drwtNo4"),
                           Gaps.h10,
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$drwtNo5",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$drwtNo5"),
                           Gaps.h10,
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$drwtNo6",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$drwtNo6"),
                           Gaps.h10,
                           const FaIcon(
                             FontAwesomeIcons.plus,
                             size: Sizes.size28,
                           ),
                           Gaps.h10,
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.orange,
-                                width: 5,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "$bnusNo",
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Sizes.size24,
-                                ),
-                              ),
-                            ),
-                          ),
+                          LottoNumberContainer(text: "$bnusNo"),
                         ],
                       ),
                       Gaps.v20,
