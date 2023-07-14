@@ -5,6 +5,7 @@ import 'package:money/constant/color.dart';
 import 'package:money/constant/function.dart';
 import 'package:money/constant/gap.dart';
 import 'package:money/constant/size.dart';
+import 'package:money/screen/authentication/login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -40,6 +41,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _userIdController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  void _onTapLoginScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LoginScreen(),
+      ),
+    );
   }
 
   @override
@@ -134,6 +144,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {},
                       color: ColorTheme.mainColor,
                       child: const Text("회원가입"),
+                    ),
+                    Gaps.v20,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "계정이 있으신가요?",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: Sizes.size16,
+                          ),
+                        ),
+                        Gaps.h8,
+                        GestureDetector(
+                          onTap: _onTapLoginScreen,
+                          child: Text(
+                            "로그인하기",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: Sizes.size16,
+                              color: ColorTheme.mainColor,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Gaps.v32,
                     Column(
