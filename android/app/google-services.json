@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "842571916612",
+    "project_id": "money-flutter-project",
+    "storage_bucket": "money-flutter-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842571916612:android:514f85ab843062b9c7a311",
+        "android_client_info": {
+          "package_name": "com.example.money"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842571916612-ogha5g0t38eij2akjd840psnv3pdg9ta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsUpVK1pO4X5jytIBaE_ZtobX8pRrz6Ro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842571916612-ogha5g0t38eij2akjd840psnv3pdg9ta.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "842571916612-b6tm7hhkpko24jnlgceloevs8bc3eh94.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.money"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

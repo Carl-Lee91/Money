@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:money/appbar/main_appbar.dart';
+import 'package:money/screen/appbar/main_appbar.dart';
 import 'package:money/constant/color.dart';
 import 'package:money/constant/gap.dart';
 import 'package:money/constant/size.dart';
@@ -99,97 +99,100 @@ class _FortuneCookieScreenState extends State<FortuneCookieScreen>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: const MainAppbar(),
-        body: Center(
-          child: GestureDetector(
-            onTap: _onTabRresult,
-            child: AnimatedBuilder(
-              animation: _opacityAnimation,
-              builder: (context, child) => Opacity(
-                opacity: _opacityAnimation.value,
-                child: _showFortune
-                    ? Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: const MainAppbar(),
+          body: Center(
+            child: GestureDetector(
+              onTap: _onTabRresult,
+              child: AnimatedBuilder(
+                animation: _opacityAnimation,
+                builder: (context, child) => Opacity(
+                  opacity: _opacityAnimation.value,
+                  child: _showFortune
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/fortunecookie.png",
+                              width: 250,
+                              height: 250,
+                            ),
+                            Gaps.v28,
+                            const Text(
+                              "오늘의 운세를 확인하세요!",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: Sizes.size24,
+                              ),
+                            ),
+                          ],
+                        )
+                      : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "오늘 당신의 행운은",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: Sizes.size24,
+                              ),
+                            ),
+                            Text(
+                              printText,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: Sizes.size36,
+                                color: ColorTheme.mainColor,
+                              ),
+                            ),
+                            const Text(
+                              "입니다",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: Sizes.size24,
+                              ),
+                            ),
+                          ],
+                        ),
+                ),
+              ),
+            ),
+          ),
+          bottomNavigationBar: AnimatedBuilder(
+            animation: _opacityAnimation,
+            builder: (context, child) => Opacity(
+              opacity: _opacityAnimation.value,
+              child: _showFortune
+                  ? null
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: Sizes.size10,
+                        vertical: Sizes.size10,
+                      ),
+                      child: Row(
                         children: [
-                          Image.asset(
-                            "assets/images/fortunecookie.png",
-                            width: 250,
-                            height: 250,
-                          ),
-                          Gaps.v28,
-                          const Text(
-                            "오늘의 운세를 확인하세요!",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: Sizes.size24,
+                          CupertinoButton(
+                            color: ColorTheme.mainColor,
+                            onPressed: _onTabLotto,
+                            child: const Text(
+                              "로또하기",
                             ),
                           ),
-                        ],
-                      )
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "오늘 당신의 행운은",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: Sizes.size24,
-                            ),
-                          ),
-                          Text(
-                            printText,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: Sizes.size36,
-                              color: ColorTheme.mainColor,
-                            ),
-                          ),
-                          const Text(
-                            "입니다",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: Sizes.size24,
+                          Gaps.h10,
+                          CupertinoButton(
+                            color: ColorTheme.mainColor,
+                            onPressed: _onTabCoin,
+                            child: const Text(
+                              "코인하기",
                             ),
                           ),
                         ],
                       ),
-              ),
+                    ),
             ),
-          ),
-        ),
-        bottomNavigationBar: AnimatedBuilder(
-          animation: _opacityAnimation,
-          builder: (context, child) => Opacity(
-            opacity: _opacityAnimation.value,
-            child: _showFortune
-                ? null
-                : Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: Sizes.size10,
-                      vertical: Sizes.size10,
-                    ),
-                    child: Row(
-                      children: [
-                        CupertinoButton(
-                          color: ColorTheme.mainColor,
-                          onPressed: _onTabLotto,
-                          child: const Text(
-                            "로또하기",
-                          ),
-                        ),
-                        Gaps.h10,
-                        CupertinoButton(
-                          color: ColorTheme.mainColor,
-                          onPressed: _onTabCoin,
-                          child: const Text(
-                            "코인하기",
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
           ),
         ),
       ),
