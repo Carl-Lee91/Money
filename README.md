@@ -1,16 +1,7 @@
-# money
+# 일확천금
 
 로또/비트코인 시세 알아보는 앱
 
-## Getting Started
+## 어떤 앱인가요
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+로또 API, 코인 API를 활용하여 오늘의 운세를 바탕으로 금주 로또당첨번호와 행운의 숫자, 코인 시세를 알아보는 어플리케이션
