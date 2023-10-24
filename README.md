@@ -1,6 +1,6 @@
 # money
 
-A new Flutter project.
+로또/비트코인 시세 알아보는 앱
 
 ## Getting Started
 
