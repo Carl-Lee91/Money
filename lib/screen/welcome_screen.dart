@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:money/constant/color.dart';
 import 'package:money/constant/gap.dart';
 import 'package:money/constant/size.dart';
-import 'package:money/screen/authentication/login_screen.dart';
+import 'package:money/screen/fortune_cookie_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const LoginScreen(),
+        builder: (context) => const FortuneCookieScreen(),
       ),
     );
   }
